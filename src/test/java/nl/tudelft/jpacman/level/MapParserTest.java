@@ -49,7 +49,8 @@ public class MapParserTest {
      * * Test for the parseMap method (bad map).
      */
     @Test public void testParseMapWrong1() {
-        PacmanConfigurationException thrown = Assertions.assertThrows(PacmanConfigurationException.class, () -> {
+        PacmanConfigurationException thrown =
+            Assertions.assertThrows(PacmanConfigurationException.class, () -> {
             MockitoAnnotations.initMocks(this);
             assertNotNull(boardFactory);
             assertNotNull(levelFactory);
@@ -60,7 +61,7 @@ public class MapParserTest {
             map.add("#P        G#");
             map.add("############");
             mapParser.parseMap(map);
-            mapParser.parseMap(map); });
+            });
             Assertions.assertEquals("Invalid character at 0,0: X", thrown.getMessage());
 
     }
